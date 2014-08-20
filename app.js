@@ -1,13 +1,13 @@
-angular.module('blinqAngularPoc', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate']);
+angular.module('app', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate']);
 
-angular.module('blinqAngularPoc').config(function($routeProvider) {
+angular.module('app').config(function($routeProvider) {
 
     /* Add New Routes Above */
     $routeProvider.otherwise({redirectTo:'/home'});
 
 });
 
-angular.module('blinqAngularPoc').run(function($rootScope) {
+angular.module('app').run(function($rootScope) {
 
     $rootScope.safeApply = function(fn) {
         var phase = $rootScope.$$phase;

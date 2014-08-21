@@ -2,6 +2,11 @@ angular.module('app', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate']);
 
 angular.module('app').config(function($routeProvider) {
 
+    $routeProvider.when('/accounts',{
+        templateUrl: 'components/account/accounts-list.html',
+        controller: 'AccountsListCtrl',
+        controllerAs: 'boogie'
+    });
     /* Add New Routes Above */
     $routeProvider.otherwise({redirectTo:'/home'});
 

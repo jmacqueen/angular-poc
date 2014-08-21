@@ -1,10 +1,16 @@
 (function () {
   'use strict';
 
-  function AccountService () {
+  function AccountService ($http) {
     this.testObject = {
       test: "test"
     };
+
+    this.getAll = $http({
+      method: 'GET',
+      url: 'json/accounts.json'
+    });
+
   }
 
   angular

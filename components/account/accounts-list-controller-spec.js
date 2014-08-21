@@ -1,4 +1,4 @@
-describe('AccountsCtrl', function() {
+describe('AccountsListCtrl', function() {
 
 	beforeEach(module('app'));
 
@@ -6,7 +6,7 @@ describe('AccountsCtrl', function() {
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller('AccountsCtrl', {$scope: scope});
+      ctrl = $controller('AccountsListCtrl', {$scope: scope});
     }));
 
 	it('should ...', inject(function() {

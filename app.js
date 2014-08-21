@@ -5,7 +5,8 @@ angular.module('app').config(function($routeProvider) {
     $routeProvider.when('/accounts',{
         templateUrl: 'components/account/accounts-list.html',
         controller: 'AccountsListCtrl',
-        controllerAs: 'boogie'
+        controllerAs: 'accounts'
+//        resolve: AccountsListCtrl.resolve
     });
     /* Add New Routes Above */
     $routeProvider.otherwise({redirectTo:'/home'});

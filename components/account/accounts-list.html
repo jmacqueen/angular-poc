@@ -1,5 +1,15 @@
 <div class="col-md-12">
 
-  <p>{{boogie.testObject.test}}</p>
+<br>
+
+  <ul>
+    <li ng-repeat="(key, account) in accounts.all">
+      {{account.name}}, {{account.email}}
+    </li>
+  </ul>
+
+  <br>
+
+  <p>{{accounts.all}}</p>
 
 </div>

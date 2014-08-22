@@ -1,7 +1,16 @@
 angular.module('app', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate']);
 
-angular.module('app').config(function($routeProvider) {
+angular.module('app')
+    .config( config )
+    .run( run )
+    .controller('AppCtrl', AppCtrl);
 
+function config ($routeProvider) {
+    $routeProvider.when('/home',{
+        templateUrl: 'app.html',
+        controller: 'AppCtrl',
+        controllerAs: 'app'
+    });
     $routeProvider.when('/accounts',{
         templateUrl: 'components/account/accounts-list.html',
         controller: 'AccountsListCtrl',
@@ -9,11 +18,9 @@ angular.module('app').config(function($routeProvider) {
     });
     /* Add New Routes Above */
     $routeProvider.otherwise({redirectTo:'/home'});
+}
 
-});
-
-angular.module('app').run(function($rootScope) {
-
+function run ($rootScope) {
     $rootScope.safeApply = function(fn) {
         var phase = $rootScope.$$phase;
         if (phase === '$apply' || phase === '$digest') {
@@ -24,5 +31,8 @@ angular.module('app').run(function($rootScope) {
             this.$apply(fn);
         }
     };
+}
 
-});
+function AppCtrl () {
+
+}

@@ -1,6 +1,10 @@
 (function () {
   'use strict';
 
+  angular
+    .module('app')
+    .service('AccountService', AccountService);
+
   function AccountService ($http) {
     this.testObject = {
       test: "test"
@@ -12,9 +16,5 @@
     });
 
   }
-
-  angular
-    .module('app')
-    .service('AccountService', AccountService);
 
 })();

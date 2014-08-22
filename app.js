@@ -6,7 +6,6 @@ angular.module('app').config(function($routeProvider) {
         templateUrl: 'components/account/accounts-list.html',
         controller: 'AccountsListCtrl',
         controllerAs: 'accounts'
-//        resolve: AccountsListCtrl.resolve
     });
     /* Add New Routes Above */
     $routeProvider.otherwise({redirectTo:'/home'});

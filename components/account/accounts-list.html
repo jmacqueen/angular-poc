@@ -1,15 +1,10 @@
-<div class="col-md-12">
-
-<br>
-
-  <ul>
-    <li ng-repeat="(key, account) in accounts.all">
-      {{account.name}}, {{account.email}}
+<div class="btn-group" dropdown is-open="status.isopen">
+  <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+    {{accounts.selected.name}} <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li ng-repeat="(index, account) in accounts.all">
+      <a href="#" ng-click="accounts.select(index, $event)">{{account.name}} : {{account.campaign_ids.length}}</a>
     </li>
   </ul>
-
-  <br>
-
-  <p>{{accounts.all}}</p>
-
 </div>

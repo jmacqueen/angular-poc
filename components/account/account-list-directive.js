@@ -18,6 +18,7 @@ function accountListDirective () {
 
 function accountListDirectiveController ($scope, $element, $attrs, AccountService) {
     var self = this;
+
     self.select = select;
 
     activate();
@@ -28,9 +29,7 @@ function accountListDirectiveController ($scope, $element, $attrs, AccountServic
     function activate() {
         return AccountService.getAll.then(function(response) {
             self.all = response.data.sort(nameSort);
-            self.selected = self.all[0];
-            $scope.selectedAccount = self.selected;
-            return self.all;
+            $scope.selectedAccount = self.selected = self.all[0];
         });
     }
 

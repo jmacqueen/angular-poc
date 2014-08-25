@@ -33,6 +33,9 @@ function campaignListDirectiveController ($scope, $element, $attrs, CampaignServ
     return CampaignService.getForAccount($scope.selectedAccount)
             .then(function(response) {
               self.all = response.data.sort(nameSort);
+              if (response.data.length === 0) {
+                $scope.selectedCampaign = self.selected = null;
+              }
             });
   }
 

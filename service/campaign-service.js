@@ -7,7 +7,7 @@
 
   function CampaignService ($http) {
     this.getForAccount = function (account){
-      if (account && account.id === "2"){
+      if (account && account.id === 2){
         return $http({
           method: 'GET',
           url: 'json/campaigns.json'

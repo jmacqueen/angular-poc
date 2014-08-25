@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "picture": "http://placehold.it/32x32",
     "name": "Eaton Cardenas",
     "company": "ENERSOL",
@@ -9,16 +9,16 @@
     "campaign_ids": []
   },
   {
-    "id": "2",
+    "id": 2,
     "picture": "http://placehold.it/32x32",
     "name": "Downs Cantrell",
     "company": "ZILODYNE",
     "email": "downscantrell@zilodyne.com",
     "registered": "2014-07-02T06:34:04 +04:00",
-    "campaign_ids": ["1","2"]
+    "campaign_ids": [1,2]
   },
   {
-    "id": "3",
+    "id": 3,
     "picture": "http://placehold.it/32x32",
     "name": "Terra Mcmahon",
     "company": "SUREPLEX",
@@ -27,7 +27,7 @@
     "campaign_ids": []
   },
   {
-    "id": "4",
+    "id": 4,
     "picture": "http://placehold.it/32x32",
     "name": "Reilly Osborn",
     "company": "COMVENE",
@@ -36,7 +36,7 @@
     "campaign_ids": []
   },
   {
-    "id": "5",
+    "id": 5,
     "picture": "http://placehold.it/32x32",
     "name": "Good Mcdonald",
     "company": "SEALOUD",
@@ -45,7 +45,7 @@
     "campaign_ids": []
   },
   {
-    "id": "6",
+    "id": 6,
     "picture": "http://placehold.it/32x32",
     "name": "Carver Lucas",
     "company": "ACRODANCE",
@@ -54,7 +54,7 @@
     "campaign_ids": []
   },
   {
-    "id": "7",
+    "id": 7,
     "picture": "http://placehold.it/32x32",
     "name": "Kennedy Blevins",
     "company": "HOMELUX",

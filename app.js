@@ -31,5 +31,6 @@ function run ($rootScope) {
 
 function AppCtrl () {
     var self = this;
-    self.selectedAccount = {name: "stuff"};
+    self.selectedAccount = null;
+    self.selectedCampaign = null;
 }

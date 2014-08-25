@@ -1,7 +1,17 @@
 <div style="border: 1px red solid">
   <p>App level scope</p>
   <p>Account: name: {{app.selectedAccount.name}} id: {{app.selectedAccount.id}}</p>
+  <p>Campaign: name: {{app.selectedCampaign.name}} id: {{app.selectedCampaign.id}}</p>
 </div>
+<br>
+<p>Accounts:</p>
 <blinq-account-selector
   selected-account="app.selectedAccount"
->
+></blinq-account-selector>
+<br>
+<p>Campaigns:</p>
+<blinq-campaign-selector
+  selected-account="app.selectedAccount"
+  selected-campaign="app.selectedCampaign"
+></blinq-campaign-selector>
+<p>Ads:</p>

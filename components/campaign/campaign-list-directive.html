@@ -1,0 +1,9 @@
+<div class="campaign-list">
+  <ul>
+    <li ng-repeat="(index, campaign) in campaigns.all"
+        ng-click="campaigns.select(campaign)"
+        ng-class="{selected: campaigns.selected.id == campaign.id}">
+      {{campaign.name}}
+    </li>
+  </ul>
+</div>

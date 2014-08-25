@@ -1,8 +1,8 @@
-describe('adService', function() {
+describe('AdService', function() {
 
   beforeEach(module('app'));
 
-  it('should ...', inject(function(adService) {
+  it('should ...', inject(function(AdService) {
 
 	//expect(adService.doSomething()).toEqual('something');
 

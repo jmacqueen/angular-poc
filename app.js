@@ -31,17 +31,7 @@ function run ($rootScope) {
 
 function AppCtrl () {
     var self = this;
-    self.selectedAccount = null;
+    self.selectedAccount  = null;
     self.selectedCampaign = null;
-
-    self.myData = [
-        {name: "name1", number: 2},
-        {name: "name2", number: 2},
-        {name: "name3", number: 2},
-        {name: "name4", number: 2},
-        {name: "name5", number: 2}
-    ];
-    self.gridOptions = {
-        data: 'app.myData'
-    };
+    self.selectedAds      = null;
 }

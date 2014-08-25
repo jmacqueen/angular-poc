@@ -17,4 +17,7 @@
 ></blinq-campaign-selector>
 <p>Ads:</p>
 <br>
-<div class="gridStyle" ng-grid="app.gridOptions"></div>
+<blinq-ad-list
+  selected-campaign="app.selectedCampaign"
+  selected-ads="app.selectedAds"
+></blinq-ad-list>

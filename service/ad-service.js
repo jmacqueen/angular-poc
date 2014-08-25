@@ -18,6 +18,10 @@ function AdService($http) {
         url: '/json/ads02.json'
       });
     }
+    return $http({
+      method: 'GET',
+      url: '/json/empty.json'
+    });
   };
 
 

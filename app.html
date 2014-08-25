@@ -1,1 +1,7 @@
-<p> Yo! </p>
+<div style="border: 1px red solid">
+  <p>App level scope</p>
+  <p>Account: name: {{app.selectedAccount.name}} id: {{app.selectedAccount.id}}</p>
+</div>
+<blinq-account-selector
+  selected-account="app.selectedAccount"
+>

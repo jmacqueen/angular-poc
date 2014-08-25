@@ -11,11 +11,7 @@ function config ($routeProvider) {
         controller: 'AppCtrl',
         controllerAs: 'app'
     });
-    $routeProvider.when('/accounts',{
-        templateUrl: 'components/account/accounts-list.html',
-        controller: 'AccountsListCtrl',
-        controllerAs: 'accounts'
-    });
+
     /* Add New Routes Above */
     $routeProvider.otherwise({redirectTo:'/home'});
 }
@@ -34,5 +30,6 @@ function run ($rootScope) {
 }
 
 function AppCtrl () {
-
+    var self = this;
+    self.selectedAccount = {name: "stuff"};
 }

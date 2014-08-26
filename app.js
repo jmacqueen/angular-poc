@@ -33,5 +33,15 @@ function AppCtrl () {
     var self = this;
     self.selectedAccount  = null;
     self.selectedCampaign = null;
-    self.selectedAds      = null;
+    self.selectedAds      = [];
+
+    self.selectedAdIds = selectedAdIds;
+
+    ////////////////////////////
+
+    function selectedAdIds(){
+        return self.selectedAds.map(function(ad){
+            return ad.id;
+        });
+    }
 }

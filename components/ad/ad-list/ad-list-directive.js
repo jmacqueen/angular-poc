@@ -19,6 +19,7 @@ function adListDirective() {
 
 function AdListDirectiveController ($scope, $element, $attrs, AdService) {
   var self = this;
+
   $scope.$watch('selectedCampaign', selectedCampaignChange);
 
   activate();
@@ -28,16 +29,18 @@ function AdListDirectiveController ($scope, $element, $attrs, AdService) {
   function activate(){
     self.all= null;
     self.gridOptions = {
-      data: "ads.all"
+      data: "ads.all",
+      selectedItems: $scope.selectedAds
     };
+
     return selectedCampaignChange;
   }
   function selectedCampaignChange () {
     return AdService.getForCampaign($scope.selectedCampaign)
             .then(function(response) {
               self.all = response.data;
+              self.gridOptions.selectAll(false);
               if (response.data.length === 0) {
-
               }
             });
   }

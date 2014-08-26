@@ -1,4 +1,5 @@
-angular.module('app', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate','ngGrid']);
+angular.module('app', ['ui.bootstrap','ui.utils','ngRoute','ngAnimate','ngGrid',
+                       'schemaForm']);
 
 angular.module('app')
     .config( config )
@@ -35,4 +36,22 @@ function AppCtrl () {
     self.selectedCampaign = null;
     self.selectedAds      = [];
 
+    self.schema = {
+        type: "object",
+        properties: {
+          name: { type: "string", minLength: 2, title: "Name", description: "Name or alias" },
+          title: {
+            type: "string",
+            enum: ['dr','jr','sir','mrs','mr','NaN','dj']
+          }
+        }
+    };
+    self.form = [
+        "*",
+        {
+          type: "submit",
+          title: "Save"
+        }
+      ];
+    self.model = {};
 }

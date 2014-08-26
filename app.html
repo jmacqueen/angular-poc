@@ -6,6 +6,8 @@
     name: {{app.selectedCampaign.name}} id: {{app.selectedCampaign.id}}</p>
   <p>Ads:<br>
     {{app.selectedAds}}</p>
+  <p>Form Model:<br>
+    {{app.model}}</p>
 </div>
 <br>
 <p>Accounts:</p>
@@ -24,3 +26,5 @@
   selected-campaign="app.selectedCampaign"
   selected-ads="app.selectedAds"
 ></blinq-ad-list>
+<br>
+<form sf-schema="app.schema" sf-form="app.form" sf-model="app.model"></form>

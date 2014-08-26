@@ -35,7 +35,7 @@ function AdListDirectiveController ($scope, $element, $attrs, AdService) {
 
     return selectedCampaignChange;
   }
-  function selectedCampaignChange () {
+  function selectedCampaignChange() {
     return AdService.getForCampaign($scope.selectedCampaign)
             .then(function(response) {
               self.all = response.data;

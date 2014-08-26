@@ -48,5 +48,4 @@ function AdListDirectiveController ($scope, $element, $attrs, AdService) {
 }
 function link (scope, element, attrs, fn) {
 
-
 }

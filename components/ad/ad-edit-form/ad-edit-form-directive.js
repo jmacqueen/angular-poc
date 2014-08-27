@@ -1,3 +1,5 @@
+(function(){
+
 angular
   .module('app')
   .directive('blinqAdEditForm', AdEditFormDirective);
@@ -49,3 +51,5 @@ function AdEditFormDirectiveController ($scope, $element, $attrs, AdService, $q)
 function link (scope, element, attrs, fn) {
 
 }
+
+})();

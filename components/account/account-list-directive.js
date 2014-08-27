@@ -1,6 +1,8 @@
+(function (){
+
 angular
-.module('app')
-.directive('blinqAccountSelector', accountListDirective);
+  .module('app')
+  .directive('blinqAccountSelector', accountListDirective);
 
 function accountListDirective () {
 	return {
@@ -49,3 +51,5 @@ function accountListDirectiveController ($scope, $element, $attrs, AccountServic
 function link (scope, element, attrs, fn) {
 
 }
+
+})();

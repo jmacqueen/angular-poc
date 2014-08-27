@@ -1,3 +1,5 @@
+(function (){
+
 angular
   .module('app')
   .directive('blinqCampaignSelector', campaignListDirective);
@@ -53,3 +55,5 @@ function campaignListDirectiveController ($scope, $element, $attrs, CampaignServ
 function link (scope, element, attrs, fn) {
 
 }
+
+})();

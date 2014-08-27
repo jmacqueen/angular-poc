@@ -20,10 +20,37 @@ function AdService($http) {
     }
     return $http({
       method: 'GET',
-      url: '/json/empty.json'
+      url: '/json/emptyArray.json'
     });
   };
 
+  this.getSchema = function(ads){
+    if (ads && ads.length > 0) {
+      return $http({
+        method: 'GET',
+        url: '/json/schema.json'
+      });
+    } else {
+      return $http({
+        method: 'GET',
+        url: '/json/emptyModel.json'
+      });
+    }
+  };
+
+  this.getForm = function(ads){
+    if (ads && ads.length > 0) {
+      return $http({
+        method: 'GET',
+        url: '/json/form.json'
+      });
+    } else {
+      return $http({
+        method: 'GET',
+        url: '/json/emptyArray.json'
+      });
+    }
+  };
 
 }
 

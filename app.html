@@ -10,21 +10,24 @@
     {{app.model}}</p>
 </div>
 <br>
-<p>Accounts:</p>
+<p>Accounts (Bootstrap dropdown):</p>
 <blinq-account-selector
   selected-account="app.selectedAccount"
 ></blinq-account-selector>
-<br>
-<p>Campaigns:</p>
+<br><br>
+<p>Campaigns (Generic <code>&lt;ul&gt;</code>):</p>
 <blinq-campaign-selector
   selected-account="app.selectedAccount"
   selected-campaign="app.selectedCampaign"
 ></blinq-campaign-selector>
-<p>Ads:</p>
 <br>
+<p>Ads (ng-grid):</p>
 <blinq-ad-list
   selected-campaign="app.selectedCampaign"
   selected-ads="app.selectedAds"
 ></blinq-ad-list>
 <br>
-<form sf-schema="app.schema" sf-form="app.form" sf-model="app.model"></form>
+<p>Form (angular-schema-form):</p>
+<blinq-ad-edit-form
+selected-ads="app.selectedAds"
+></blinq-ad-edit-form>

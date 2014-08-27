@@ -15,7 +15,7 @@
       } else {
         return $http({
           method: 'GET',
-          url: 'json/empty.json'
+          url: 'json/emptyArray.json'
         });
       }
     };

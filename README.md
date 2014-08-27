@@ -1,7 +1,15 @@
 # Angular POC
 
+```grunt serve``` for development
+```grunt build``` for release
+```grunt test``` to run all of the tests
+
 A Yeoman generator that sets things up *mostly* how I want them:
 https://github.com/cgross/generator-cg-angular
+
+Recommeded Angular style guides:
+https://github.com/toddmotto/angularjs-styleguide#directives
+https://github.com/johnpapa/angularjs-styleguide
 
 Reading about JSON Schema starting point:
 http://crypt.codemancers.com/posts/2014-02-11-An-introduction-to-json-schema/

@@ -30,9 +30,21 @@ function run ($rootScope) {
     };
 }
 
-function AppCtrl () {
+function AppCtrl ($scope) {
     var self = this;
     self.selectedAccount  = null;
     self.selectedCampaign = null;
     self.selectedAds      = [];
+    self.selectedAdIds    = [];
+
+    // controllerAs requires $watch to use a function to return object to be watched
+    $scope.$watch(function(){return self.selectedAds;},
+                  getSelectedAdIds, true);
+
+    function getSelectedAdIds(newVal, oldVal) {
+        self.selectedAdIds = newVal.map(
+            function(ad){
+                return ad.id;
+            });
+    }
 }

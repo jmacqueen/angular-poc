@@ -42,9 +42,6 @@ function AppCtrl ($scope) {
                   getSelectedAdIds, true);
 
     function getSelectedAdIds(newVal, oldVal) {
-        self.selectedAdIds = newVal.map(
-            function(ad){
-                return ad.id;
-            });
+        self.selectedAdIds = newVal.map( function(ad){ return ad.id; } );
     }
 }

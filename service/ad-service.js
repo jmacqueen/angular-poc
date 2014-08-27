@@ -16,7 +16,7 @@ function AdService($http) {
     if (campaign && campaign.id === 2){
       return $http({
         method: 'GET',
-        url: '/json/ads02.json'
+        url: '/json/ads-huge.json'
       });
     }
     return $http({

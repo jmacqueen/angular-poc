@@ -1,3 +1,8 @@
 <div class=".blinq-ad-edit-form">
-  <form sf-schema="adEditor.schema" sf-form="adEditor.form" sf-model="adEditor.changes"></form>
+  <form
+    name="adEditForm"
+    sf-schema="adEditor.schema"
+    sf-form="adEditor.form"
+    sf-model="adEditor.changes"
+    ng-submit="adEditor.onSubmit(adEditForm)"></form>
 </div>

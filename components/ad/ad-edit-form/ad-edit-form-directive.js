@@ -21,17 +21,31 @@ function AdEditFormDirective () {
 function AdEditFormDirectiveController ($scope, $element, $attrs, AdService, $q) {
   var self = this;
 
+  self.selectedAds = $scope.selectedAds;
+
   self.changes = {};
   self.schema = {};
   self.form = [];
+  self.onSubmit = onSubmit;
 
-  $scope.$watch('selectedAds', selectedAdsChange, true);
+  $scope.$watch(function(){
+                  return self.selectedAds;
+                }, selectedAdsChange, true);
 
   activate();
 
   ///////////////////////////////////
 
   function activate() {
+  }
+
+  function onSubmit(myForm){
+    window.alert("Do things!");
+    console.group("AdEditForm Submit");
+    console.log("Form object: ", myForm);
+    console.log("adEditor.changes: ", self.changes);
+    console.log("Ads to change: ", self.selectedAds);
+    console.groupEnd();
   }
 
   function selectedAdsChange(newVal, oldVal){

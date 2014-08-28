@@ -21,6 +21,8 @@
     "angular-bootstrap": "~0.10",
     "moment": "~2.5",
     "less.js": "~1.6",
-    "font-awesome": "~4.0"
+    "font-awesome": "~4.0",
+    "angular-schema-form": "~0.7.2",
+    "angular-grid": "~2.0.12"
   }
 }

@@ -40,10 +40,17 @@ function AdService($http) {
   };
 
   this.getColumnDefs = function(campaign) {
-    return $http({
-      method: 'GET',
-      url: '/json/column-defs.json'
-    });
+    if (campaign && campaign.id === 1) {
+      return $http({
+        method: 'GET',
+        url: '/json/column-defs1.json'
+      });
+    } else {
+      return $http({
+        method: 'GET',
+        url: '/json/column-defs2.json'
+      });
+    }
   };
 }
 

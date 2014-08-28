@@ -34,7 +34,6 @@ function AdListDirectiveController ($scope, $element, $attrs, AdService) {
     self.all = null;
 
     // gridOptions.columnDefs only updates on $scope variables passed in as a string. Boo, ngGrid v2. Boo.
-
     self.gridOptions = {
       data: "adList.all",
       selectedItems: self.selectedAds,

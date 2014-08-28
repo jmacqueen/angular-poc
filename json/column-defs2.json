@@ -1,5 +1,6 @@
 [
    {"field": "name", "displayName":"Name"},
    {"field": "body", "displayName":"Body Text"},
+   {"field": "type", "displayName":"Type"},
    {"field": "status", "displayName":"Status"}
 ]

@@ -35,6 +35,52 @@
   }
 },
 
+"circular": {
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 35,
+      "title": "Name",
+      "description": "Name or alias"
+    },
+    "circular_id": {
+      "type": "number",
+      "title": "Circular Id",
+      "description": "Unique id of the circular"
+    },
+    "circular_target": {
+      "type": "string",
+      "title": "Circular Target Page",
+      "description": "URL of the destination page"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": ["ACTIVE", "ARCHIVED", "PAUSED"]
+    },
+    "type": {
+      "type": "string",
+      "title": "Ad Type",
+      "enum": ["link", "image", "auto"]
+    },
+    "bid": {
+      "type": "number",
+      "title": "Bid (in cents)"
+    },
+    "body": {
+      "type": "string",
+      "title": "Ad Body Text",
+      "maxLength": 512
+    },
+    "image": {
+      "type": "string",
+      "title": "Image URL"
+    }
+  }
+},
+
 "auto": {
   "type": "object",
   "properties": {

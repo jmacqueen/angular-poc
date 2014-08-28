@@ -6,7 +6,7 @@ angular
   .service('AdService', AdService);
 
 function AdService($http) {
-  this.getForCampaign = function(campaign) {
+  this.getAdsForCampaign = function(campaign) {
     if (campaign && campaign.id === 1){
       return $http({
         method: 'GET',
@@ -39,6 +39,12 @@ function AdService($http) {
     });
   };
 
+  this.getColumnDefs = function(campaign) {
+    return $http({
+      method: 'GET',
+      url: '/json/column-defs.json'
+    });
+  };
 }
 
 })();

@@ -9,7 +9,7 @@ function adListDirective() {
 		restrict: 'E',
 		replace: true,
     controller: AdListDirectiveController,
-    controllerAs: 'ads',
+    controllerAs: 'adList',
 		scope: {
       'selectedCampaign': "=",
       'selectedAds': "="
@@ -22,6 +22,8 @@ function adListDirective() {
 function AdListDirectiveController ($scope, $element, $attrs, AdService) {
   var self = this;
 
+  self.selectedAds = $scope.selectedAds;
+
   $scope.$watch('selectedCampaign', selectedCampaignChange);
 
   activate();
@@ -29,21 +31,27 @@ function AdListDirectiveController ($scope, $element, $attrs, AdService) {
 //////////////////////////////////
 
   function activate(){
-    self.all= null;
+    self.all = null;
+
+    // gridOptions.columnDefs only updates on $scope variables passed in as a string. Boo, ngGrid v2. Boo.
+
     self.gridOptions = {
-      data: "ads.all",
-      selectedItems: $scope.selectedAds
+      data: "adList.all",
+      selectedItems: self.selectedAds,
+      columnDefs: "columnDefinitions"
     };
 
     return selectedCampaignChange;
   }
   function selectedCampaignChange() {
-    return AdService.getForCampaign($scope.selectedCampaign)
+    AdService.getColumnDefs($scope.selectedCampaign)
+      .then(function(response){
+        return $scope.columnDefinitions = response.data;
+      });
+    return AdService.getAdsForCampaign($scope.selectedCampaign)
             .then(function(response) {
               self.all = response.data;
               self.gridOptions.selectAll(false);
-              if (response.data.length === 0) {
-              }
             });
   }
 

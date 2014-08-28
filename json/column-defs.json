@@ -1,0 +1,4 @@
+[
+   {"field": "name", "displayName":"Name"},
+   {"field": "body", "displayName":"Body Text"}
+]

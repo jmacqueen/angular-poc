@@ -1,23 +1,35 @@
 {
   "image": [
-    "*",
-    {
-      "type": "submit",
-      "title": "Save"
-    }
+    {"key": "name"},
+    {"key": "image"},
+    {"key": "body"},
+    {"key": "bid"},
+    {"key": "status"},
+    {"key": "type"}
   ],
   "link": [
-    "*",
+    "*"
+  ],
+  "circular": [
     {
-      "type": "submit",
-      "title": "Save"
+      "type": "tabs",
+      "tabs": [
+        {
+          "title": "Tab 1",
+          "items": ["name","body","image","bid"]
+        },
+        {
+          "title": "Tab 2",
+          "items": ["circular_id","circular_target"]
+        },
+        {
+          "title": "Tab 3",
+          "items": ["type","status"]
+        }
+      ]
     }
   ],
   "auto": [
-    "*",
-    {
-      "type": "submit",
-      "title": "Save"
-    }
+    "*"
   ]
 }

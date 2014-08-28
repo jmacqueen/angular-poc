@@ -1,0 +1,109 @@
+{
+"image": {
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 35,
+      "title": "Name",
+      "description": "Name or alias"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": ["ACTIVE", "ARCHIVED", "PAUSED"]
+    },
+    "type": {
+      "type": "string",
+      "title": "Ad Type",
+      "enum": ["link", "circular", "image", "auto"]
+    },
+    "bid": {
+      "type": "number",
+      "title": "Bid (in cents)"
+    },
+    "body": {
+      "type": "string",
+      "title": "Ad Body Text",
+      "maxLength": 512
+    },
+    "image": {
+      "type": "string",
+      "title": "Image URL"
+    }
+  }
+},
+
+"auto": {
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 35,
+      "title": "Name",
+      "description": "Name or alias"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": ["ACTIVE", "ARCHIVED", "PAUSED"]
+    },
+    "type": {
+      "type": "string",
+      "title": "Ad Type",
+      "enum": ["link", "image", "auto"]
+    },
+    "bid": {
+      "type": "number",
+      "title": "Bid (in cents)"
+    },
+    "body": {
+      "type": "string",
+      "title": "Ad Body Text",
+      "maxLength": 512
+    },
+    "image": {
+      "type": "string",
+      "title": "Image URL"
+    }
+  }
+},
+
+"link": {
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 100,
+      "title": "Name",
+      "description": "Name or alias"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": ["ACTIVE", "ARCHIVED", "PAUSED"]
+    },
+    "type": {
+      "type": "string",
+      "title": "Ad Type",
+      "enum": ["link", "circular", "image", "auto"]
+    },
+    "bid": {
+      "type": "number",
+      "title": "Bid (in cents)"
+    },
+    "body": {
+      "type": "string",
+      "title": "Ad Body Text",
+      "maxLength": 125
+    },
+    "image": {
+      "type": "string",
+      "title": "Image URL"
+    }
+  }
+}
+}

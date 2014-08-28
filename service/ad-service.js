@@ -25,32 +25,18 @@ function AdService($http) {
     });
   };
 
-  this.getSchema = function(ads){
-    if (ads && ads.length > 0) {
-      return $http({
-        method: 'GET',
-        url: '/json/schema.json'
-      });
-    } else {
-      return $http({
-        method: 'GET',
-        url: '/json/emptyModel.json'
-      });
-    }
+  this.getSchemas = function(){
+    return $http({
+      method: 'GET',
+      url: '/json/schemas.json'
+    });
   };
 
-  this.getForm = function(ads){
-    if (ads && ads.length > 0) {
-      return $http({
-        method: 'GET',
-        url: '/json/form.json'
-      });
-    } else {
-      return $http({
-        method: 'GET',
-        url: '/json/emptyArray.json'
-      });
-    }
+  this.getForms = function(){
+    return $http({
+      method: 'GET',
+      url: '/json/forms.json'
+    });
   };
 
 }

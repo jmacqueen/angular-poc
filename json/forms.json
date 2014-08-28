@@ -1,0 +1,23 @@
+{
+  "image": [
+    "*",
+    {
+      "type": "submit",
+      "title": "Save"
+    }
+  ],
+  "link": [
+    "*",
+    {
+      "type": "submit",
+      "title": "Save"
+    }
+  ],
+  "auto": [
+    "*",
+    {
+      "type": "submit",
+      "title": "Save"
+    }
+  ]
+}

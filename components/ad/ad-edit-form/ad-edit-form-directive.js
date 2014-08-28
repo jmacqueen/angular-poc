@@ -24,8 +24,10 @@ function AdEditFormDirectiveController ($scope, $element, $attrs, AdService, $q)
   self.selectedAds = $scope.selectedAds;
 
   self.changes = {};
-  self.schema = {};
-  self.form = [];
+  self.schemas = {};
+  self.forms = {};
+  self.currentSchema = {};
+  self.currentForm = [];
   self.onSubmit = onSubmit;
 
   $scope.$watch(function(){
@@ -37,28 +39,36 @@ function AdEditFormDirectiveController ($scope, $element, $attrs, AdService, $q)
   ///////////////////////////////////
 
   function activate() {
-  }
+    var getSchemas = AdService.getSchemas();
+    var getForms = AdService.getForms();
 
-  function onSubmit(myForm){
-    window.alert("Do things!");
-    console.group("AdEditForm Submit");
-    console.log("Form object: ", myForm);
-    console.log("adEditor.changes: ", self.changes);
-    console.log("Ads to change: ", self.selectedAds);
-    console.groupEnd();
-  }
-
-  function selectedAdsChange(newVal, oldVal){
-    var getSchema = AdService.getSchema(newVal);
-    var getForm = AdService.getForm(newVal);
-
-    $q.all([getSchema, getForm])
+    return $q.all([getSchemas, getForms]) // Batched AJAX calls
       .then(function(response){
         var schemaJSON = response[0].data;
         var formJSON = response[1].data;
-        self.schema = schemaJSON;
-        self.form = formJSON;
+        self.schemas = schemaJSON;
+        self.forms = formJSON;
       });
+  }
+
+  function onSubmit(myForm){
+    $scope.$broadcast('schemaFormValidate');
+    if (myForm.$valid) {
+      window.alert("Do things!");
+      console.group("AdEditForm Submit");
+      console.log("Form object: ", myForm);
+      console.log("adEditor.changes: ", self.changes);
+      console.log("Ads to change: ", self.selectedAds);
+      console.groupEnd();
+    }
+  }
+
+  function selectedAdsChange(newVal, oldVal){
+    if (newVal && newVal.length > 0){
+      var adType = newVal[0].type;
+      self.currentSchema = self.schemas[adType];
+      self.currentForm = self.forms[adType];
+    }
   }
 }
 

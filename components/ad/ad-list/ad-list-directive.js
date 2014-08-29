@@ -37,7 +37,8 @@ function AdListDirectiveController ($scope, $element, $attrs, AdService) {
     self.gridOptions = {
       data: "adList.all",
       selectedItems: self.selectedAds,
-      columnDefs: "columnDefinitions"
+      columnDefs: "columnDefinitions",
+      multiSelect: false
     };
 
     return selectedCampaignChange;

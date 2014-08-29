@@ -16,7 +16,7 @@
       "tabs": [
         {
           "title": "Tab 1",
-          "items": ["name","body","image","bid"]
+          "items": ["name","body","bid"]
         },
         {
           "title": "Tab 2",

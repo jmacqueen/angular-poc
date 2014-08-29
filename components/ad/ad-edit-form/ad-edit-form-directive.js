@@ -65,10 +65,25 @@ function AdEditFormDirectiveController ($scope, $element, $attrs, AdService, $q)
 
   function selectedAdsChange(newVal, oldVal){
     if (newVal && newVal.length > 0){
-      var adType = newVal[0].type;
-      self.currentSchema = self.schemas[adType];
+      var adType = newVal[0].type; // Just working on singles for now
+      var ad = newVal[0];          // Ditto
+      self.currentSchema = setFormDefaults(self.schemas[adType]);
       self.currentForm = self.forms[adType];
+    } else {
+      self.currentForm = [{type: "help", helpvalue: "<p></p>"}];
     }
+  }
+  function setFormDefaults(schema){
+    var ad = self.selectedAds[0];
+
+    _.each(_.keys(schema.properties), function(propertyName){ // Mmmmmm. Hot schema injection
+      var adKeys = _.keys(ad);
+      if (_.contains(adKeys, propertyName)) {
+        _.extend(schema.properties[propertyName], {"default": ad[propertyName]});
+      }
+    });
+
+    return schema;
   }
 }
 

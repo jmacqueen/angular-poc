@@ -5,7 +5,7 @@
     "name": {
       "type": "string",
       "minLength": 5,
-      "maxLength": 35,
+      "maxLength": 60,
       "title": "Name",
       "description": "Name or alias"
     },
@@ -41,7 +41,7 @@
     "name": {
       "type": "string",
       "minLength": 5,
-      "maxLength": 35,
+      "maxLength": 60,
       "title": "Name",
       "description": "Name or alias"
     },
@@ -63,7 +63,7 @@
     "type": {
       "type": "string",
       "title": "Ad Type",
-      "enum": ["link", "image", "auto"]
+      "enum": ["link", "circular", "image", "auto"]
     },
     "bid": {
       "type": "number",
@@ -73,10 +73,6 @@
       "type": "string",
       "title": "Ad Body Text",
       "maxLength": 512
-    },
-    "image": {
-      "type": "string",
-      "title": "Image URL"
     }
   }
 },
@@ -87,7 +83,7 @@
     "name": {
       "type": "string",
       "minLength": 5,
-      "maxLength": 35,
+      "maxLength": 60,
       "title": "Name",
       "description": "Name or alias"
     },
@@ -99,7 +95,7 @@
     "type": {
       "type": "string",
       "title": "Ad Type",
-      "enum": ["link", "image", "auto"]
+      "enum": ["link", "circular", "image", "auto"]
     },
     "bid": {
       "type": "number",
